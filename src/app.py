@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException, status, Request, Response
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 import endpoints
 from core import exceptions
@@ -8,7 +9,21 @@ from db.engine import database
 app = FastAPI()
 app.include_router(endpoints.auth.router, prefix='/auth', tags=['Authentication'])
 app.include_router(endpoints.users.router, prefix='/users', tags=['Users'])
+app.include_router(endpoints.quizzes.router, prefix='/quizzes', tags=['Quizzes'])
 app.include_router(endpoints.helper.router, prefix='/help', tags=['Helpers'])
+
+origins = [
+    'http://localhost',
+    'http://localhost:3000',
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.on_event('startup')

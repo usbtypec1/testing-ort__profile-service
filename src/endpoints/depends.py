@@ -3,12 +3,17 @@ from fastapi import Depends, HTTPException, status
 
 import models
 from core import security, exceptions
+from repositories.quizzes import QuizRepository
 from repositories.users import UserRepository
 from db.engine import database
 
 
 def get_user_repository():
     return UserRepository(database)
+
+
+def get_quiz_repository():
+    return QuizRepository(database)
 
 
 async def get_current_user(

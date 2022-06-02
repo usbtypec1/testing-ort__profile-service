@@ -1,1 +1,1 @@
-from . import users, auth, helper
+from . import users, auth, helper, quizzes
