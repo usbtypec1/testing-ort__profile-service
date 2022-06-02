@@ -40,6 +40,8 @@ class QuizRepository(BaseRepository):
                                        created_by_user=user.id)
         quiz_id = await self._database.execute(query)
         with open(file_path, 'w', encoding='utf-8') as file:
-            json.dump(quiz_json.dict(), file, ensure_ascii=False)
+            json_dict = quiz_json.dict()
+            json_dict['id'] = quiz_id
+            json.dump(json_dict, file, ensure_ascii=False)
         quiz_json.id = quiz_id
         return quiz_json

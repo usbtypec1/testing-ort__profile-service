@@ -11,13 +11,14 @@ class QuizPreview(BaseModel):
     created_at: datetime
 
 
+class QuizAnswer(BaseModel):
+    answer: str
+    is_correct: bool
+
+
 class QuizQuestion(BaseModel):
     question: str
-    answer1: str
-    answer2: str
-    answer3: str
-    answer4: str
-    correct_answer: str
+    answers: list[QuizAnswer]
 
 
 class QuizJSON(BaseModel):

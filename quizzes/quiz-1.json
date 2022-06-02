@@ -5,11 +5,66 @@
   "quiz": [
     {
       "question": "2+2",
-      "answer1": "4",
-      "answer2": "3",
-      "answer3": "1",
-      "answer4": "5",
-      "correct_answer": "4"
+      "answers": [
+        {
+          "answer": "hello",
+          "is_correct": false
+        },
+        {
+          "answer": "hello",
+          "is_correct": false
+        },
+        {
+          "answer": "hello",
+          "is_correct": false
+        },
+        {
+          "answer": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "question": "2+2",
+      "answers": [
+        {
+          "answer": "hello",
+          "is_correct": false
+        },
+        {
+          "answer": "hello",
+          "is_correct": false
+        },
+        {
+          "answer": "hello",
+          "is_correct": false
+        },
+        {
+          "answer": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "question": "2+2",
+      "answers": [
+        {
+          "answer": "hello",
+          "is_correct": false
+        },
+        {
+          "answer": "hello",
+          "is_correct": false
+        },
+        {
+          "answer": "hello",
+          "is_correct": false
+        },
+        {
+          "answer": "4",
+          "is_correct": true
+        }
+      ]
     }
   ]
 }
